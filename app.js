@@ -6,8 +6,8 @@ const router = require('./routh/auth');
 require('./models/user')
 const PORT= process.env.PORT || 3001;
 mongoose.connect(MongoURI,{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false})
-.then(()=>{console.log("connected to Mongodb")})
-.catch((err)=>{console.log("Error:connecting Mongodb:",err)})
+    .then(()=>{console.log("connected to Mongodb")})
+    .catch((err)=>{console.log("Error:connecting Mongodb:",err)})
 mongoose.model('user');
 app.use(express.json())
 app.use(router)
