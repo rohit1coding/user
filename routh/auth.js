@@ -12,7 +12,7 @@ router.get("/protected",requireLogin,(req,res)=>{
     res.send("Hello User")
 })
 router.get('/',(req,res)=>{
-    res.send("Hello from router");
+    res.send("Hello from Server");
 });
 router.post('/SignUp',(req,res)=>{
     const {name,email,contact,pic,password}=req.body;
