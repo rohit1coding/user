@@ -12,7 +12,7 @@ mongoose.model('user');
 app.use(express.json())
 app.use(router)
 if(process.env.NODE_ENV==='production'){
-    app.use(express.static('my-app/build'))
+    app.use(express.static('./my-app/build'))
     const path = require('path')
     app.get("*",(req,res)=>{
         res.sendFile(path.resolve(__dirname,'my-app','build','index.html'))
