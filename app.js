@@ -3,7 +3,6 @@ var app=express();
 var mongoose= require('mongoose');
 const {MongoURI}=require('./cofig/keys');
 const router = require('./routh/auth');
-const a;
 require('./models/user')
 const PORT= process.env.PORT || 3001;
 mongoose.connect(MongoURI,{useNewUrlParser:true,useUnifiedTopology:true})
