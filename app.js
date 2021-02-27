@@ -7,16 +7,17 @@ require('./models/user')
 const PORT= process.env.PORT || 3001;
 mongoose.connect(MongoURI,{useNewUrlParser:true,useUnifiedTopology:true})
     .then(()=>{console.log("connected to Mongodb")})
-    .catch((err)=>{console.log("Error:connecting Mongodb:",err)});
-    if(process.env.NODE_ENV==='production'){
-        app.use(express.static('my-app/build'))
-        const path = require('path')
-        app.get("*",(req,res)=>{
-            res.sendFile(path.resolve(__dirname,'my-app','build','index.html'))
-        })  
-    }
+    .catch((err)=>{console.log("Error:connecting Mongodb:",err)})
 mongoose.model('user');
 app.use(express.json())
 app.use(router)
+if(process.env.NODE_ENV==='production'){
+    app.use(express.static('my-app/build'))
+    const path = require('path')
+    app.get("*",(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'my-app','build','index.html'))
+    })  
+}
+
 app.listen(PORT,()=>{console.log(`App is running on Port:${PORT}`)});
 
