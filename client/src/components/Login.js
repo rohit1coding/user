@@ -36,7 +36,7 @@ const Login = () => {
     return (
         <div className="myCard">
             <div className="card auth-card">
-                <h2 className="fame">Esale Media</h2>
+                <h2 className="fame">InternTest</h2>
                 {/* <form> */}
                 <input type="text" placeholder="email" 
                         value={email} onChange={(e)=>setEmail(e.target.value)}/>

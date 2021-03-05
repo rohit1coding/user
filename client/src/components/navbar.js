@@ -30,7 +30,7 @@ const Navbar=()=>{
     return(    
       <nav>
         <div className="nav-wrapper #673ab7 deep-purple">
-          <Link to={state?"/":"/SignUp"} className="brand-logo left"><img style={{width:"150px",height:"64px",borderRadius:"10%"}} src="https://esalemedia.com/logo12345.png"/></Link>
+          <Link to={state?"/":"/SignUp"} className="brand-logo left">InternTest</Link>
           <ul id="nav-mobile" className="right">
             {renderList()}
           </ul>
